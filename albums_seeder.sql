@@ -1,4 +1,5 @@
 USE codeup_test_db;
+TRUNCATE albums;
 INSERT INTO albums (artist, name, release_date, sales, genre)
 	VALUES('Michael Jackson', 'Thriller', 1982, 45.4, 'pop, rock, R&B'),
 	('Eagles', 'Their Greatest Hits', 1976, 32.2, 'rock'),
@@ -7,4 +8,6 @@ INSERT INTO albums (artist, name, release_date, sales, genre)
 	('Nirvana', 'Nevermind', 1991, 16.7, 'Grunge, alternative rock'),
 	('AC/DC', 'Back in Black', 1980, 25.9, 'hard rock'),
 	('Whitney Houston', 'The Bodyguard', 1992, 27.4, 'soundtrack, R&B, pop'),
-	('Meat Loaf', 'Bat Out of Hell', 1977, 20.6, 'hard rock, progessive rock');
+	('Meat Loaf', 'Bat Out of Hell', 1977, 20.6, 'hard rock, progessive rock'),
+	('Bee Gees', 'Saturday Night Fever', 1977, 19, 'disco'),
+	('Fleetwood Mac', 'Rumours', 1977, 27.9, 'soft rock');

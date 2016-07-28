@@ -21,10 +21,12 @@ SELECT emp_no, CONCAT(first_name, ' ', last_name) AS 'full_name', hire_date, dat
 	WHERE birth_date LIKE '%12-25' AND (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
 	ORDER BY birth_date, hire_date ASC;
 
-SELECT *
+SELECT CONCAT(first_name, ' ', last_name) AS 'full_name', birth_date
 	FROM employees
 	WHERE birth_date LIKE '%12-25';
 
-SELECT *
+SELECT *, COUNT(*) AS 'count'
 	FROM employees
-	WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%';
+	WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'
+	GROUP BY first_name, last_name
+	ORDER BY last_name;

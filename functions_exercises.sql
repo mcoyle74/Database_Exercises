@@ -16,10 +16,10 @@ SELECT CONCAT(first_name, ' ', last_name) AS 'full_name'
 	WHERE last_name LIKE 'e%e'
 	ORDER BY emp_no DESC;
 
-SELECT emp_no, CONCAT(first_name, ' ', last_name) AS 'full_name', hire_date, datediff(curdate(), hire_date) AS 'tenure'
+SELECT emp_no, CONCAT(first_name, ' ', last_name) AS 'full_name', birth_date, hire_date, datediff(curdate(), hire_date) AS 'tenure'
 	FROM employees
 	WHERE birth_date LIKE '%12-25' AND (hire_date BETWEEN '1990-01-01' AND '1999-12-31')
-	ORDER BY birth_date, hire_date ASC;
+	ORDER BY hire_date ASC;
 
 SELECT CONCAT(first_name, ' ', last_name) AS 'full_name', birth_date
 	FROM employees

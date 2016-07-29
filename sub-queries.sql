@@ -41,16 +41,27 @@ WHERE dept_no IN (
 -- Historic average salary of female vs. male employees
 SELECT gender, AVG(salary) AS 'Historic Avg Salary'
 FROM salaries AS s
-JOIN employees AS e ON e.emp_no = s.emp_no
+	JOIN employees AS e ON e.emp_no = s.emp_no
 GROUP BY gender;
 
 -- Current average salaries of female vs. male employees
 SELECT gender, AVG(salary) AS 'Current Avg Salary'
 FROM salaries AS s
-JOIN employees AS e ON e.emp_no = s.emp_no
+	JOIN employees AS e ON e.emp_no = s.emp_no
 WHERE to_date = '9999-01-01'
 GROUP BY e.gender;
 
 -- Historic average salaries of female vs. male managers
+SELECT gender, AVG(salary) AS 'Historic Avg Salary'
+FROM salaries AS s
+	JOIN dept_manager AS dm ON dm.emp_no = s.emp_no
+	JOIN employees AS e ON e.emp_no = dm.emp_no
+GROUP BY gender;
 
 -- Current average salaries of female vs. male managers
+SELECT gender, AVG(salary) AS 'Current Avg Salary'
+FROM salaries AS s
+	JOIN dept_manager AS dm ON dm.emp_no = s.emp_no
+	JOIN employees AS e ON e.emp_no = dm.emp_no
+WHERE dm.to_date = '9999-01-01'
+GROUP BY gender;

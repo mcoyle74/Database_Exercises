@@ -44,6 +44,13 @@ FROM salaries AS s
 JOIN employees AS e ON e.emp_no = s.emp_no
 GROUP BY gender;
 
+-- Current average salaries of female vs. male employees
+SELECT gender, AVG(salary) AS 'Current Avg Salary'
+FROM salaries AS s
+JOIN employees AS e ON e.emp_no = s.emp_no
+WHERE to_date = '9999-01-01'
+GROUP BY e.gender;
+
 -- Historic average salaries of female vs. male managers
 
 -- Current average salaries of female vs. male managers

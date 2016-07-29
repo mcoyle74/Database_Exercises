@@ -36,3 +36,14 @@ WHERE dept_no IN (
 		FROM employees
 		WHERE gender = 'F')
 );
+
+-- EXTRA BONUS: determining gender/par disparity...
+-- Historic average salary of female vs. male employees
+SELECT gender, AVG(salary) AS 'Historic Avg Salary'
+FROM salaries AS s
+JOIN employees AS e ON e.emp_no = s.emp_no
+GROUP BY gender;
+
+-- Historic average salaries of female vs. male managers
+
+-- Current average salaries of female vs. male managers

@@ -30,11 +30,11 @@ WHERE emp_no IN (
 
 -- BONUS Find all the department names that have female managers.
 SELECT dept_name
-FROM departments;
+FROM departments
 WHERE dept_no IN (
-	SELECT emp_no
+	SELECT dept_no
 	FROM dept_manager
-	WHERE to_date = '9999-01-01' AND emp_no IN (
+	WHERE emp_no IN (
 		SELECT emp_no
 		FROM employees
 		WHERE gender = 'F')

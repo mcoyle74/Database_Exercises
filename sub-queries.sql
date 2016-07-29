@@ -21,12 +21,9 @@ SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Department Manager'
 FROM employees AS e
 WHERE emp_no IN (
 	SELECT emp_no
-	FROM employees
-	WHERE gender = 'F' AND emp_no IN (
-		SELECT emp_no
-		FROM dept_manager
-	)
-);
+	FROM dept_manager
+)
+AND gender = 'F';
 
 -- BONUS Find all the department names that have female managers.
 SELECT dept_name

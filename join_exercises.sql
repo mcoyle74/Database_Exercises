@@ -7,5 +7,4 @@ SELECT
 	roles.id AS 'Role ID',
 	roles.name AS 'Role'
 	FROM users
-	JOIN roles ON users.role_id = roles.id;
-		
+	LEFT JOIN roles ON users.role_id = roles.id;
